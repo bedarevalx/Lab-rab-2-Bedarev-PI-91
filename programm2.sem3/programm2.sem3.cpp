@@ -11,6 +11,7 @@ typedef struct construction {
     void Display();
     void Init(int a, int b, int c);
     void comaprs(construction1 cons1,construction1 cons2);
+    void calcsquare();
 }construction1;
 
 void construction::Read() {
@@ -28,6 +29,22 @@ void construction::Init(int lenght, int width, int height) {
     a = lenght;
     b = width;
     c = height;
+}
+void construction::calcsquare() {
+    square = a * b * c;
+}
+
+void construction::comaprs(construction1 cons1, construction1 cons2) {
+    if (cons1.square == cons2.square) {
+        printf("\nФигуры одинаковой площади");
+        return;
+    }
+    if (cons1.square > cons2.square) {
+        printf("\nПлощадь первой фигуры больше");
+    }
+    if (cons1.square < cons2.square) {
+        printf("\nПлощадь второй фигуры больше");
+    }
 }
 
 int main()
